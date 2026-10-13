@@ -1,0 +1,6 @@
+{
+  "name": "SmartRoute AI – Real-Time Flight & Train Delay-Aware Route Replanner",
+  "description": "Smart travel assistant that helps users discover alternative journeys, simulate delays, and replan routes when flights or trains are disrupted.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,53 @@
+{
+  "scenarios": [
+    {
+      "id": "scenario-chennai-delhi-gt",
+      "title": "Chennai to Delhi (Grand Trunk Express Connection Collapse)",
+      "description": "Passenger departs Chennai Central on Grand Trunk Exp (12615) connecting at Nagpur for Telangana Exp (12723) to Delhi. A 30-min delay leaves only 15 min at Nagpur, causing a missed connection.",
+      "origin": "Chennai",
+      "destination": "Delhi",
+      "original_route_ids": ["TR-101", "TR-102"],
+      "initial_delay_min": 30,
+      "disruption_point": "Nagpur Junction",
+      "replanned_options": [
+        {
+          "name": "Multimodal Rail+Air Bypass via Nagpur Airport",
+          "route_ids": ["TR-101", "FL-205"],
+          "reasoning": "Even with 30m train delay, passenger arrives Nagpur by 12:00. IndiGo 6E-671 departs at 14:40 (160 min buffer), reaching Delhi at 16:25—saving 915 minutes vs waiting for next day's train."
+        },
+        {
+          "name": "Alternative Rail Via Vijayawada & Vande Bharat Connect",
+          "route_ids": ["TR-105", "TR-104"],
+          "reasoning": "Morning departure via Vande Bharat with solid 180 min connection window at Vijayawada, avoiding congested central corridor delay hotspots."
+        },
+        {
+          "name": "Direct Flight Rebook (IndiGo 6E-2041)",
+          "route_ids": ["FL-201"],
+          "reasoning": "Emergency direct option for time-critical travel, bypassing entire ground track disruption."
+        }
+      ]
+    },
+    {
+      "id": "scenario-chennai-delhi-evening",
+      "title": "Chennai to Delhi (Air India Evening Flight Fog/Slot Delay)",
+      "description": "Air India AI-542 delayed 45 minutes due to evening departure runway congestion at MAA.",
+      "origin": "Chennai",
+      "destination": "Delhi",
+      "original_route_ids": ["FL-202"],
+      "initial_delay_min": 45,
+      "disruption_point": "Chennai Airport (MAA)",
+      "replanned_options": [
+        {
+          "name": "Next Morning Direct IndiGo Flight",
+          "route_ids": ["FL-201"],
+          "reasoning": "Guaranteed 98% on-time morning slot with lowest delay risk score."
+        },
+        {
+          "name": "Overnight Rajdhani Superfast (12433)",
+          "route_ids": ["TR-109"],
+          "reasoning": "Premium AC berth with 0 risk of flight cancellation or weather holding patterns."
+        }
+      ]
+    }
+  ]
+}
